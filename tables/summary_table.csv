@@ -1,0 +1,17 @@
+rowname,Est.Error,Estimate,l-95% CI,u-95% CI
+Intercept,0.02,4.49,4.46,4.53
+biovol_c,0.03,-0.84,-0.9,-0.79
+temp_c,0.02,0.12,0.08,0.16
+pho_c,0.04,0.7,0.63,0.77
+zoo_c,0.03,0.11,0.05,0.18
+biovol_c:temp_c,0.03,-0.08,-0.14,-0.03
+biovol_c:pho_c,0.05,0,-0.1,0.1
+temp_c:pho_c,0.04,-0,-0.07,0.07
+biovol_c:zoo_c,0.05,-0.05,-0.14,0.04
+temp_c:zoo_c,0.03,0,-0.05,0.05
+pho_c:zoo_c,0.04,-0.06,-0.14,0.03
+biovol_c:temp_c:pho_c,0.05,0.01,-0.09,0.11
+biovol_c:temp_c:zoo_c,0.04,0.01,-0.07,0.08
+biovol_c:pho_c:zoo_c,0.06,-0.09,-0.2,0.02
+temp_c:pho_c:zoo_c,0.04,0.01,-0.06,0.09
+biovol_c:temp_c:pho_c:zoo_c,0.04,0.08,-0,0.17

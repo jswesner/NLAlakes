@@ -281,7 +281,7 @@ draws_nomix = tibble(biovol_c = c(0, 1)) %>%
   group_by(pho, temp, zoo_cat, model, log_phos, log_zoo, temp_c, pho_c) %>%
   summarize(mean_slopes = mean(slope))
 
-bind_rows(draws_d, draws_colony, draws_nomix) %>%
+method_compare_heat = bind_rows(draws_d, draws_colony, draws_nomix) %>%
   # mutate(zoo_cat = as.factor(zoo_cat),
   #        zoo_cat = fct_relevel(zoo_cat, "Low Pred"),
   #        model = as.factor(model),
@@ -290,6 +290,9 @@ bind_rows(draws_d, draws_colony, draws_nomix) %>%
   geom_tile(aes(fill = mean_slopes)) +
   scale_fill_viridis_c(option = 'C', direction = -1, na.value="white") +
   facet_grid(model ~ zoo_cat) +
-  geom_point(data = dat_grid,
-             aes(x = temp_mean, y = pho_c), col = 'green', alpha = 0.6, size = 2)
+  labs(y = "log10 Phosphorous\n(Centered)",
+       x = "Temperature \u00b0C\n(Centered)",
+       fill = "Slope")
 
+ggsave(method_compare_heat, file = "plots/method_compare_heat.jpg",
+       width = 5, height = 6, dpi = 500)
